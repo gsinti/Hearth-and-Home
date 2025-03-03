@@ -40,7 +40,7 @@ namespace Server
 
 	// The game saves itself after this many minutes in decimal format between 10 and 240 minutes.
 
-		public static double S_ServerSaveMinutes = 30.0;
+		public static double S_ServerSaveMinutes = 15.0;
 
 	// If true, saves the game when your character logs out. Helpful for single player games.
 
@@ -75,7 +75,7 @@ namespace Server
 
 	// Here you can enter the name of your server/world
 
-		public static string S_ServerName = "Secrets of Sosaria";
+		public static string S_ServerName = "Hearth and Home";
 
 	// If true, your public IP address will be auto detected to help with external connections.
 
@@ -106,13 +106,13 @@ namespace Server
 
 	// If true, then the strange portals that lead to deep and dangerous dungeons will have an exit portal.
 
-		public static bool S_PortalExits = false;
+		public static bool S_PortalExits = true;
 
 	// If set to 1,000 gold or higher, then the bribery system will be enabled that allows characters to give this amount of gold
 	// to the Assassin Guildmaster so they can bribe the right people and remove a murder count one at a time (never applies to
 	// fugitives, and assassin guild members only pay half this amount).
 
-		public static int S_Bribery = 50000;
+		public static int S_Bribery = 5000;
 
 	// There are almost 300 classic artifacts in the game, as well as artifacts created for this game that are specifically named
 	// and designed. These are items like 'Stormbringer' or 'Conan's Lost Sword'. By default, these items will retain their
@@ -126,7 +126,7 @@ namespace Server
 	// player has to find their corpse and potentially collect their belongings. The default for this setting is 10 minutes
 	// and the below is 110 minutes for a combined 2 hours or 120 minutes.
 
-		public static int S_CorpseDecay = 7;
+		public static int S_CorpseDecay = 60;
 
 	// The below setting is the number of minutes that a player character bones will decay. This option, as well as the
 	// option above, could potentially be used to have player character corpses remain longer or for a more difficult style
@@ -134,7 +134,7 @@ namespace Server
 	// you want to use a more difficult style of play, then setting these two combined minutes to something long enough for
 	// an enemy player to take the dead character's belongings may be desired. The default is 110 minutes.
 
-		public static int S_BoneDecay = 113;
+		public static int S_BoneDecay = 1380;
 
   	// The setting below controls if mark/recall is available to traditionally restricted places like ambrosia, ravendark village, 
 	// caverns of poseidon and the like. Quest related worlds will remain blocked regardless of the chosen option. Default is true.
@@ -147,7 +147,7 @@ namespace Server
 
 	// If true, a player character cannot use macros to improve their skills quickly.
 
-		public static bool S_NoMacroing = true;
+		public static bool S_NoMacroing = false;
 
 	// You can increase the rate that stats gain from 50.0 (slow) to 10.0 (fast).
 
@@ -155,7 +155,7 @@ namespace Server
 
 	// How many minutes between stat gains which helps with the above setting. This can be between 5.0 to 60.0 minutes.
 
-		public static double S_StatGainDelay = 15.0;
+		public static double S_StatGainDelay = 10.0;
 
 	// If true, new characters can choose to take the alien origin route.
 	// This is a play style where one can choose to enter a transporter and be a character that crashed
@@ -166,7 +166,7 @@ namespace Server
 	// suffer double stat/fame/karma/skill loss on death with no tribute
 	// suffer normal stat/fame/karma/skill loss on death with tribute
 
-		public static bool S_AllowAlienChoice = false;
+		public static bool S_AllowAlienChoice = true;
 
 	// Set to the number 0 to disable. The other values are 1, 2, or 3 where the default is 1. When greater than 0, you will
 	// enable the creature character feature of the game. This allows players to become a creature of the game as their
@@ -186,12 +186,12 @@ namespace Server
 	// If true, then characters will not get hungry or thirsty when inside places like banks, inns, or houses...allowing you
 	// to step away from the game without your character starving eventually.
 
-		public static bool S_Belly = false;
+		public static bool S_Belly = true;
 
 	// This number can be set from 5 to 60, which determines the number of minutes that hunger and thirst are checked for
 	// reduction (default is 5).
 
-		public static int S_FoodCheck = 5;
+		public static int S_FoodCheck = 60;
 
 	// Below is the guild base fee to join a guild. This is the intial cost to join the first guild. If you quit, and join
 	// another guild, then the fee will increase by that amount. It is based on the number of guild you were a member of
@@ -214,8 +214,8 @@ namespace Server
 	// setting, and it cannot be lower than 1. If it was set to 20, and a charcter was level 10, then their resurrection cost
 	// would be a base of 200 gold/tithe ( 20 x 10 ).
 
-		public static int S_DeathPayLevel = 5;
-		public static int S_DeathPayAmount = 20;
+		public static int S_DeathPayLevel = 25;
+		public static int S_DeathPayAmount = 10;
 
 	// Spell damage toward monsters can be between 25 and 200 percent.
 
@@ -228,21 +228,21 @@ namespace Server
 	// Maximum amount of lower reagent percentage, up to 100 for 100%. For equipment with lower reagent properties.
 	// Setting it to zero will disable the attribute from the game.
 
-		public static int S_LowerReg = 50;
+		public static int S_LowerReg = 75;
 
 	// Maximum aount of lower mana percentage, up to 100 for 100%. For equipment with lower mana properties.
 	// Setting it to zero will disable the attribute from the game.
 
-		public static int S_LowerMana = 40;
+		public static int S_LowerMana = 75;
 
 	// This setting between 0.5 and 3.0 (decimal format) will give a character that much hit points, mana, or stamina based
 	// on the attribute. So a strength of 100 will give a character 200 hit points if this is set at 2.0.
 
-		public static double S_PlayerLevelMod = 1.0;
+		public static double S_PlayerLevelMod = 2.0;
 
 	// If true, then characters will be able to set a custom title for their character in the HELP section.
 
-		public static bool S_AllowCustomTitles = false;
+		public static bool S_AllowCustomTitles = true;
 
 	// This is the minimum and maximum gold that a player character starts with. Default is 100 and 150. The most gold a
 	// character can begin with is 10,000 gold.
@@ -285,7 +285,7 @@ namespace Server
 	// The percent of gold you get from creatures, treasure, cargo, museum searches, shoppes, and some quests
 	// between 5 (low) to 100 (high).
 
-		public static int S_GetGoldCutRate = 25;
+		public static int S_GetGoldCutRate = 50;
 
 	// The gold reward from bulletin board quests is modified below between 0 and 250 percent. It also modifies
 	// the thief note quests you get from whispering to the guildmaster, and the decorative items they steal.
@@ -297,19 +297,20 @@ namespace Server
 
 		public static bool S_DecoArtySteal = false;
 
-	// If set to true, then characters will not receive artifacts from stealable boxes in dungeons. 
+	// If set to true, then characters will only get lucrative items from a pedestal bag/box once every couple
+	// of days.
 
 		public static bool S_PedStealThrottle = true;
 
 	// If set to true, then a character will get a warning before they are entering Skara Brae. This area is a
 	// quest driven area, that has some quest requirements to be met before they can leave that area.
 
-		public static bool S_WarnSkaraBrae = false;
+		public static bool S_WarnSkaraBrae = true;
 
 	// If set to true, then a character will get a warning before they are entering the Bottle City. This area
 	// is a quest driven area, that has some quest requirements to be met before they can leave that area.
 
-		public static bool S_WarnBottleCity = false;
+		public static bool S_WarnBottleCity = true;
 
 
 
@@ -318,11 +319,8 @@ namespace Server
 	// 005 - SKILLS ///////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////
 
-	// This value is between 0 (default) and 52, where you can set the amount of extra GM skill points characters get. So if you set
-	// it to '2' then characters get 200 (2 x 100) more skills points available. Setting it to 45 will allow a character to reach 100 in every skill,
-	// setting it to 52 will allow a character to reach 125 in every skill (given that they use the correct powerscrolls),
-	// setting it to a value higher than default might make some playstyles (alien, wanted) undesirable aside from roleplay reasons, as well as diminish the benefits from
-	// certain endgame quests.  
+	// This value is between 0 and 10, where you can set the amount of extra GM skill points characters get. So if you set
+	// it to '2' then characters get 200 (2 x 100) more skills points available.
 
 		public static int S_SkillBoost = 0;
 
@@ -365,14 +363,14 @@ namespace Server
 	// and stats will raise equatable to doing 1 or many at a time. Enabling this will also enable macroing.
 	// Enabling this will also disable the items you craft that use all resources like arrows, shafts, and kindling.
 
-		public static bool S_CraftMany = false;
+		public static bool S_CraftMany = true;
 
 	// Setting the below value to true (default false) will only apply if the S_CraftMany setting is true.
 	// When viewing crafting line items, this will show the 1, 10, and 100 buttons next to each line item.
 	// If you want to allow players to craft many items at once, and don't want the trade window screen
 	// having many buttons on it, then leave this set to false.
 
-		public static bool S_CraftButtons = false;
+		public static bool S_CraftButtons = true;
 
 	// The below value should be set to a whole number from 1-100, where the amount of resources one gets (ore,
 	// logs, hides, herbs, jars of body parts, meat, feathers, scales, wool, wheat, furs, fish, sand,
@@ -383,7 +381,7 @@ namespace Server
 	// successful resources are gathered (lumberjacking, mining, fishing, forensics, cooking, and inscription).
 	// Setting this greater than one will enable macroing.
 
-		public static int S_Resources = 1;
+		public static int S_Resources = 10;
 
 	// Increasing this number will increase the price of enhancing items with extraordinary tools that are used by
 	// guild members, when next to their guildmasters. This value is a percentage increase from the base price.
@@ -392,15 +390,16 @@ namespace Server
 
 	// If false, characters will get a CAPTCHA windows occasionally to avoid unattended resource gathering with macros.
 
-		public static bool S_AllowMacroResources = false;
+		public static bool S_AllowMacroResources = true;
 
 	// If false, then characters will need to have the appropriate tool equipped to craft.
 		
-		public static bool S_AllowBackpackCraftTool = false;
+		public static bool S_AllowBackpackCraftTool = true;
 
 	// If false, then characters will need to have the appropriate tool equipped to gather resources.
 		
-		public static bool S_AllowBackpackHarvestTool = false;
+		public static bool S_AllowBackpackHarvestTool = true;
+
 
 
 
@@ -410,12 +409,12 @@ namespace Server
 
 	// If true, all creatures will have an ability to detect hidden characters based on their difficulty level.
 
-		public static bool S_CreaturesSearching = true;
+		public static bool S_CreaturesSearching = false;
 
 	// This is the body value for standard Wyrms. 723 is the newer, larger creatures. 12 is the classic wyrm where
 	// 59 is the dragon body.
 
-		public static int S_WyrmBody = 723;
+		public static int S_WyrmBody = 12;
 
 	// This number is the percentage chance that an enemy will fail to dispel a summoned creature. This check only
 	// occurs if the enemy can pass the various checks to even determine that they can dispel the summoned creature.
@@ -445,7 +444,7 @@ namespace Server
 	// If true, then the land will spawn random powerful daemons/balrons/dragons/wyrms/angels/etc that will spread
 	// throughout the land.
 
-		public static bool S_Scary = true;
+		public static bool S_Scary = false;
 
 	// These 5 settings control whether that particular land has safari animals spawn like elephants, giraffes, cheetahs, or zebras.
 	// These are values between 0 and 100, where 0 never occurs and 100 always does. Setting it to '50' would be 50% of the time.
@@ -460,7 +459,7 @@ namespace Server
 	// searching for blood. It only applies to creatures in dungeons, caves, or outside dangerous areas like
 	// cemeteries. If you change this, then run the [buildworld command when the server restarts.
 
-		public static bool S_LineOfSight = true;
+		public static bool S_LineOfSight = false;
 
 	// If true, the purple named adventurers will attack nearby monsters and not just the characters that are
 	// criminals, murderers, or have low karma.
@@ -474,8 +473,8 @@ namespace Server
 	// rate than most of the creatures, and those particular creatures will use this spawn rate. They will then
 	// add additional minutes to reflect the longer spawn.
 
-		public static int S_SpawnMin = 45;
-		public static int S_SpawnMax = 60;
+		public static int S_SpawnMin = 60;
+		public static int S_SpawnMax = 120;
 
 
 	// This settings controls the limit in seconds by which you can be paralyzed by a monster. 
@@ -483,7 +482,7 @@ namespace Server
 	// value higher than 10 could mean that the paralyze cooldown is lower than its duration, 
 	// which can lead to frustrating fights as enemies can flee and chain-paralyze a character until they heal 
 	// enough to get back into the fight. 
-		public static double S_paralyzeDuration = 10.0;
+		public static double S_paralyzeDuration = 5.0;
 
 	///////////////////////////////////////////////////////////////////////////////////////////////
 	// 008 - MERCHANTS ////////////////////////////////////////////////////////////////////////////
@@ -497,16 +496,16 @@ namespace Server
 
 	// If true (default false) then vendors will sell anything they normally stock. Some items have a default rarity % that this setting does not affect.
 
-		public static bool S_SellAll = false;
+		public static bool S_SellAll = true;
 
 	// If true (default false) then vendors will buy anything they normally stock. Some items have a default rarity % that this setting does not affect.
 
-		public static bool S_BuyAll = false;
+		public static bool S_BuyAll = true;
 
 	// If false, then vendors will NOT buy some tailor materials (cotton, flax, wool, regular cloth, and string).
 	// Does not affect a custom merchant that is set to buy such items.
 
-		public static bool S_BuyCloth = false;
+		public static bool S_BuyCloth = true;
 
 	// If false, then vendors will not buy things from player characters. Merchant crates will also be disabled and act as normal containers.
 
@@ -521,17 +520,17 @@ namespace Server
 	// default levels. As gameplay occurs, this value can increase for a vendor as you buy things from them, or pay for services they offer.
 
 		public static bool S_RichMerchants = false;
-		public static bool S_UseRemainingGold = true;
-		public static int S_MinMerchant = 500;
-		public static int S_MaxMerchant = 1000;
+		public static bool S_UseRemainingGold = false;
+		public static int S_MinMerchant = 1000;
+		public static int S_MaxMerchant = 2000;
 
 	// This setting is the percentage to decrease the prices of items that player characters sell to vendors. Zero disables this.
 
-		public static int S_SellGoldCutRate = 50;
+		public static int S_SellGoldCutRate = 25;
 
 	// If true, then prices will fluctuate based on how good an item is and what stats it has, as well as the material it is made from.
 
-		public static bool S_QualityPrices = false;
+		public static bool S_QualityPrices = true;
 
 	// If true, then players can buy merchant crates to lock down in their house to sell the items they craft.
 
@@ -546,7 +545,7 @@ namespace Server
 	// So a setting of 50 will increase resource sold prices by 50%. WARNING: This will stack with the increased
 	// prices set with the above setting.
 
-		public static int S_ResourcePrice = 500;
+		public static int S_ResourcePrice = 200;
 
 	// If true, then some merchants may sell large volumes of resources (ingots, ore, boards, leather, hides, cloth,
 	// bottles, jars, and blank scrolls) and more types, except for non-magical resources (reagents). The resources
@@ -561,7 +560,7 @@ namespace Server
 	// Consider leaving this true if you allow players to harvest many resources at once.
 	// (bandages, flax, ingots, cloth, boards, ore, hides, arrows, bones, scales, feathers, etc).
 
-		public static bool S_NoBuyResources = true;
+		public static bool S_NoBuyResources = false;
 
 	// If true, then some vendors will have a black market option in their context menus. When used, a different
 	// purchasing screen will be presented to the player. They can see the special crafted items they have in
@@ -576,7 +575,7 @@ namespace Server
 	// This is in the Merchant.cs file. WARNING: Vendors can only sell 250 different items. NOTE: Many settings
 	// here, that affect vendors, will not affect the custom merchant.
 
-		public static bool S_CustomMerchant = false;
+		public static bool S_CustomMerchant = true;
 
 
 
@@ -589,7 +588,7 @@ namespace Server
 	// then specify this dual ownership when choosing an item security level. The default setting is false, where
 	// co-owners have much more limited permissions as the standard game allows.
 
-		public static bool S_HouseOwners = false;
+		public static bool S_HouseOwners = true;
 
 	// When true (default setting), characters can use lawn tools (from architects) to add items to the outside
 	// of their home like trees, shrubs, fences, lave, water, and other items. Lawn tools require an amount of
@@ -597,7 +596,7 @@ namespace Server
 	// false, the lawn items will refund the gold back to the character's bank box and the lawn tools will be
 	// removed from the game.
 
-		public static bool S_LawnsAllowed = false;
+		public static bool S_LawnsAllowed = true;
 
 	// When true (default setting), characters can use remodeling tools (from architects) to add items to their
 	// home like walls, doors, tiles, and other items. Remodeling tools require an amount of gold to place items.
@@ -622,7 +621,7 @@ namespace Server
 
 	// The amount of houses an account's characters may own. A -1 setting will be unlimited.
 
-		public static int S_HousesPerAccount = 1;
+		public static int S_HousesPerAccount = -1;
 
 	// If true, this means that the players can dye construction contracts so their pre-designed home is
 	// entirely in that same color.
@@ -632,13 +631,13 @@ namespace Server
 	// If true, then players can make use of the custom house system. Otherwise they can only purchase the
 	// pre-built classic houses.
 
-		public static bool S_AllowCustomHomes = false;
+		public static bool S_AllowCustomHomes = true;
 
 	// If true, the public basement system is active. This lets players buy basement doors for their homes
 	// and basement doors will appear in some trade shops. These lead to the same basement public area and
 	// is usually used for multiplayer game environments.
 
-		public static bool S_Basements = false;
+		public static bool S_Basements = true;
 
 	// If true, then anything you set in you home will never decay. This makes the housing system's storage
 	// capacity useless as any home can hold any amount of items, and it may convince players to never
@@ -648,7 +647,7 @@ namespace Server
 	// down if they are going to decorate their home and they want them unmovable or able to be manipulated
 	// with the homeowner tools.
 
-		public static bool S_HouseStorage = false;
+		public static bool S_HouseStorage = true;
 
 
 
@@ -663,18 +662,18 @@ namespace Server
 
 	// Increase this amount in decimal format to increase damage done to player controlled NPCs.
 
-		public static double S_DamageToPets = 2.0;
+		public static double S_DamageToPets = 1.0;
 
 	// Set a 0-100 percent chance enemies will get a critical double damage hit against player controlled NPCs.
 
-		public static int S_CriticalToPets = 20;
+		public static int S_CriticalToPets = 0;
 
 	// If true, some areas will not allow you to mount a creature for riding. This makes dungeons (for example)
 	// more challenging. Player mounts get stabled when they go in certain areas like dungeons or caves and
 	// they will remount them when they leave these areas. Set to false if you do not want to limit where they
 	// take mounts. Keep in mind that having no mounts in dungeons does increase the difficulty.
 
-		public static bool S_NoMountsInCertainRegions = true;
+		public static bool S_NoMountsInCertainRegions = false;
 
 	// If true, then characters on mounts will dismount when they enter a building. They should mount their
 	// steed again when they leave.
@@ -692,7 +691,7 @@ namespace Server
 
 	// If true, then followers will not stack on top of each other but instead spread out a bit.
 
-		public static bool S_FriendsAvoidHeels = false;
+		public static bool S_FriendsAvoidHeels = true;
 
 	// If true, then followers will not only guard you when commanded, but guard the other
 	// followers in your group.
@@ -708,7 +707,7 @@ namespace Server
 	// This number can be set from 0 to 30, which determines the number of days before you can bond
 	// a pet one tamed (default is 7).
 
-		public static int S_BondDays = 7;
+		public static int S_BondDays = 3;
 
 
 
@@ -722,16 +721,16 @@ namespace Server
 	// lose some equipment which is limited to stackable items like: potions, bandages, arrows, bolts, 
 	// gems, coins, jewels, crystals, reagents, bottles, food, and water.
 
-		public static bool S_GuardsSentenceDeath = true;
+		public static bool S_GuardsSentenceDeath = false;
 
 	// If true, guards will pay attention to enemies outside of their town borders.
 
-		public static bool S_GuardsPatrolOutside = false;
+		public static bool S_GuardsPatrolOutside = true;
 
 	// If true, guards will move quicker to catch criminals but this only works if they do not
 	// sentence them to death.
 
-		public static bool S_GuardsSprint = true;
+		public static bool S_GuardsSprint = false;
 
 	// If true, then adventurers that gather in towns may have a humanoid, pet, or summoned companion
 	// with them. These gatherings are when 2-4 adventurers stand in a circle and face each other,
@@ -753,7 +752,7 @@ namespace Server
 	// game. Any settings here, that interfere with your enjoyment of the game, are under your
 	// control and you can change these settings at any time if you wish to.
 
-		public static bool S_Reviewed = false;
+		public static bool S_Reviewed = true;
 
 
 	}
