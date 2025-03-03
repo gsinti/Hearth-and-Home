@@ -3,4 +3,6 @@ Data/Logs
 Data/System/Source/obj
 throttle.log
 Saves
-throttle.log
+Data.*
+**/*.log
+**/*.bin
