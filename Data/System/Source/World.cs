@@ -809,7 +809,7 @@ namespace Server {
 
 			strategy.ProcessDecay();
 
-			Console.WriteLine( "Save done in {0:F2} seconds.", watch.Elapsed.TotalSeconds );
+			Console.WriteLine( "{1}: Save done in {0:F2} seconds.", watch.Elapsed.TotalSeconds, DateTime.Now.ToString("u") );
 
 			if ( message )
 				Broadcast( 0x35, true, "Game save complete. The entire process took {0:F1} seconds.", watch.Elapsed.TotalSeconds );
