@@ -59,7 +59,7 @@ namespace Server
 
 	// If true, players can just type in a name and password and it will create an account for them.
 
-		public static bool S_AutoAccounts = true;
+		public static bool S_AutoAccounts = false;
 
 	// The port you want your server to listen on.
 
