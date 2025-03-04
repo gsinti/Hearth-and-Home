@@ -1,7 +1,7 @@
 using System; 
 using System.Collections.Generic; 
 using Server; 
-using System.Collections; 
+using Server.Engines.BulkOrders;
 using Server.Targeting;
 using Server.Items;
 using Server.Network;
@@ -64,6 +64,51 @@ namespace Server.Mobiles
 				}
 			}
 		}
+
+		#region Bulk Orders
+		public override Item CreateBulkOrder( Mobile from, bool fromContextMenu )
+		{
+			PlayerMobile pm = from as PlayerMobile;
+
+			if ( pm != null && pm.NextTailorBulkOrder == TimeSpan.Zero && (fromContextMenu || 0.2 > Utility.RandomDouble()) )
+			{
+				double theirSkill = pm.Skills[SkillName.Tailoring].Base;
+
+				pm.NextTailorBulkOrder = TimeSpan.FromMinutes( 0.01 );
+
+				if ( theirSkill >= 70.1 && ((theirSkill - 40.0) / 300.0) > Utility.RandomDouble() )
+					return new LargeTailorBOD();
+
+				return SmallTailorBOD.CreateRandomFor( from );
+			}
+
+			return null;
+		}
+
+		public override bool IsValidBulkOrder( Item item )
+		{
+			return ( item is SmallTailorBOD || item is LargeTailorBOD );
+		}
+
+		public override bool SupportsBulkOrders( Mobile from )
+		{
+			return ( from is PlayerMobile && from.Skills[SkillName.Tailoring].Base > 0 );
+		}
+
+		public override TimeSpan GetNextBulkOrder( Mobile from )
+		{
+			if ( from is PlayerMobile )
+				return ((PlayerMobile)from).NextTailorBulkOrder;
+
+			return TimeSpan.Zero;
+		}
+
+		public override void OnSuccessfulBulkOrderReceive( Mobile from )
+		{
+			if( Core.SE && from is PlayerMobile )
+				((PlayerMobile)from).NextTailorBulkOrder = TimeSpan.Zero;
+		}
+		#endregion
 
 		public Tanner( Serial serial ) : base( serial )
 		{
