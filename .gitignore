@@ -1,8 +1,8 @@
 Backups
+Data/Data.*
 Data/Logs
 Data/System/Source/obj
 throttle.log
 Saves
-Data.*
 **/*.log
 **/*.bin
