@@ -521,8 +521,8 @@ namespace Server
 
 		public static bool S_RichMerchants = false;
 		public static bool S_UseRemainingGold = false;
-		public static int S_MinMerchant = 1000;
-		public static int S_MaxMerchant = 2000;
+		public static int S_MinMerchant = 1500;
+		public static int S_MaxMerchant = 2500;
 
 	// This setting is the percentage to decrease the prices of items that player characters sell to vendors. Zero disables this.
 
