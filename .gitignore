@@ -1,7 +1,7 @@
 Backups
+Data/Data.*
 Data/Logs
 Data/System/Source/obj
 Saves
-Data.*
 **/*.log
 **/*.bin
