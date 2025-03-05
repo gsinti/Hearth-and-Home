@@ -5,3 +5,4 @@
 /Saves
 **/*.log
 **/*.bin
+/World.exe
