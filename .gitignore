@@ -1,8 +1,7 @@
-Backups
-Data/Data.*
-Data/Logs
-Data/System/Source/obj
-throttle.log
-Saves
+/Backups
+/Data/Data.*
+/Data/Logs
+/Data/System/Source/obj
+/Saves
 **/*.log
 **/*.bin
