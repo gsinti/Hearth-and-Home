@@ -1,8 +1,6 @@
-/Backups
 /Data/Data.*
 /Data/Logs
 /Data/System/Source/obj
-/Saves
 **/*.log
 **/*.bin
 /World.exe
