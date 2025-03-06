@@ -200,7 +200,7 @@ namespace Server
 	// it will be the flat fee every time. The minimum fee to join a guild is 200 gold.
 
 		public static int S_GuildJoinFee = 2000;
-		public static bool S_GuildIncrease = true;
+		public static bool S_GuildIncrease = false;
 
 	// This number is the maximum value a player character resistance can be, and it must be between 40 and 90.
 	// The system default is 70. If you set this to 60, then a player can only achieve a maximum of 60 in each of the
