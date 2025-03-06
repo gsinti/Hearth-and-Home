@@ -1,6 +1,9 @@
 /Data/Data.*
 /Data/Logs
 /Data/System/Source/obj
+/Saves
+
+/World.exe
+
 **/*.log
 **/*.bin
-/World.exe
