@@ -252,8 +252,8 @@ namespace Server
 	// This is the minimum and maximum gold that a player character starts with. Default is 100 and 150. The most gold a
 	// character can begin with is 10,000 gold.
 
-		public static int S_MinGold = 100;
-		public static int S_MaxGold = 150;
+		public static int S_MinGold = 250;
+		public static int S_MaxGold = 500;
 
 	// this changes how the poisoning skill works. If set to true, then character skill will be taken into account instead of poison
     // level to determine the maximum amount of poison charges a weapon can have, as well as how many charges are applied with each dose. 
