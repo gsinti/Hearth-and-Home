@@ -546,13 +546,13 @@ namespace Server
 	// Increasing this number will increase the prices of items sold from vendors, by this percentage.
 	// So a setting of 50 will increase prices by 50%.
 
-		public static int S_PriceMore = 0;
+		public static int S_PriceMore = 25;
 
 	// Increasing this number will increase the prices of sold resources (ingots, wood, etc) by the percentage.
 	// So a setting of 50 will increase resource sold prices by 50%. WARNING: This will stack with the increased
 	// prices set with the above setting.
 
-		public static int S_ResourcePrice = 200;
+		public static int S_ResourcePrice = 25;
 
 	// If true, then some merchants may sell large volumes of resources (ingots, ore, boards, leather, hides, cloth,
 	// bottles, jars, and blank scrolls) and more types, except for non-magical resources (reagents). The resources
