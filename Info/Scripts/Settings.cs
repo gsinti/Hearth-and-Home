@@ -266,11 +266,11 @@ namespace Server
 
 	// The percent chance an item will be unidentified and no less than 10 percent.
 
-		public static int S_GetUnidentifiedChance = 50;
+		public static int S_GetUnidentifiedChance = 25;
 
 	// If true, characters can only identify items (that require a double click) within their backpack.
 
-		public static bool S_IdentifyItemsOnlyInPack = true;
+		public static bool S_IdentifyItemsOnlyInPack = false;
 
 	// This setting determines the loot filled on corpses and chests. The higher the number, the more
 	// often treasure will appear. The default and maximum is 100. Some enemies will generate a bit of
