@@ -334,7 +334,7 @@ namespace Server
 	// To use special weapon abilities, this is the minimum skill level required (weapon skill and tactics) where the
 	// default is 70.0 (minimum of 20.0). Each ability requires 10 additional points above the previous (70, 80, 90, etc).
 
-		public static double S_SpecialWeaponAbilSkill = 70.0;
+		public static double S_SpecialWeaponAbilSkill = 50.0;
 
 	// This number can be set from zero to 10, where 10 will give characters faster skill gain and zero
 	// leaves it normal (default).
