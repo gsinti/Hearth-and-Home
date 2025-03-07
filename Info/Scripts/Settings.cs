@@ -388,7 +388,7 @@ namespace Server
 	// successful resources are gathered (lumberjacking, mining, fishing, forensics, cooking, and inscription).
 	// Setting this greater than one will enable macroing.
 
-		public static int S_Resources = 10;
+		public static int S_Resources = 5;
 
 	// Increasing this number will increase the price of enhancing items with extraordinary tools that are used by
 	// guild members, when next to their guildmasters. This value is a percentage increase from the base price.
