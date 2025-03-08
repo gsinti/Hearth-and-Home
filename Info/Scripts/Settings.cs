@@ -134,7 +134,7 @@ namespace Server
 	// you want to use a more difficult style of play, then setting these two combined minutes to something long enough for
 	// an enemy player to take the dead character's belongings may be desired. The default is 110 minutes.
 
-		public static int S_BoneDecay = 60 * 24;
+		public static int S_BoneDecay = 60 * 48;
 
   	// The setting below controls if mark/recall is available to traditionally restricted places like ambrosia, ravendark village, 
 	// caverns of poseidon and the like. Quest related worlds will remain blocked regardless of the chosen option. Default is true.
