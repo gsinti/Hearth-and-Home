@@ -155,7 +155,7 @@ namespace Server
 
 	// How many minutes between stat gains which helps with the above setting. This can be between 5.0 to 60.0 minutes.
 
-		public static double S_StatGainDelay = 10.0;
+		public static double S_StatGainDelay = 15.0;
 
 	// If true, new characters can choose to take the alien origin route.
 	// This is a play style where one can choose to enter a transporter and be a character that crashed
@@ -214,8 +214,8 @@ namespace Server
 	// setting, and it cannot be lower than 1. If it was set to 20, and a charcter was level 10, then their resurrection cost
 	// would be a base of 200 gold/tithe ( 20 x 10 ).
 
-		public static int S_DeathPayLevel = 25;
-		public static int S_DeathPayAmount = 10;
+		public static int S_DeathPayLevel = 5;
+		public static int S_DeathPayAmount = 20;
 
 	// Represents stat/skill loss (in percentage) when resurrecting without gold at a healer/ankh.
 	// This does not affect penalties for alien characters. Ranges from 0.0 to 10.0. The default is 5.0.
@@ -233,12 +233,12 @@ namespace Server
 	// Maximum amount of lower reagent percentage, up to 100 for 100%. For equipment with lower reagent properties.
 	// Setting it to zero will disable the attribute from the game.
 
-		public static int S_LowerReg = 75;
+		public static int S_LowerReg = 50;
 
 	// Maximum aount of lower mana percentage, up to 100 for 100%. For equipment with lower mana properties.
 	// Setting it to zero will disable the attribute from the game.
 
-		public static int S_LowerMana = 75;
+		public static int S_LowerMana = 40;
 
 	// This setting between 0.5 and 3.0 (decimal format) will give a character that much hit points, mana, or stamina based
 	// on the attribute. So a strength of 100 will give a character 200 hit points if this is set at 2.0.
@@ -247,13 +247,13 @@ namespace Server
 
 	// If true, then characters will be able to set a custom title for their character in the HELP section.
 
-		public static bool S_AllowCustomTitles = true;
+		public static bool S_AllowCustomTitles = false;
 
 	// This is the minimum and maximum gold that a player character starts with. Default is 100 and 150. The most gold a
 	// character can begin with is 10,000 gold.
 
-		public static int S_MinGold = 250;
-		public static int S_MaxGold = 500;
+		public static int S_MinGold = 100;
+		public static int S_MaxGold = 150;
 
 	// this changes how the poisoning skill works. If set to true, then character skill will be taken into account instead of poison
     // level to determine the maximum amount of poison charges a weapon can have, as well as how many charges are applied with each dose. 
@@ -302,8 +302,7 @@ namespace Server
 
 		public static bool S_DecoArtySteal = false;
 
-	// If set to true, then characters will only get lucrative items from a pedestal bag/box once every couple
-	// of days.
+	// If set to true, then characters will not receive artifacts from stealable boxes in dungeons. 
 
 		public static bool S_PedStealThrottle = true;
 
@@ -326,8 +325,11 @@ namespace Server
 	// 005 - SKILLS ///////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////
 
-	// This value is between 0 and 10, where you can set the amount of extra GM skill points characters get. So if you set
-	// it to '2' then characters get 200 (2 x 100) more skills points available.
+	// This value is between 0 (default) and 52, where you can set the amount of extra GM skill points characters get. So if you set
+	// it to '2' then characters get 200 (2 x 100) more skills points available. Setting it to 45 will allow a character to reach 100 in every skill,
+	// setting it to 52 will allow a character to reach 125 in every skill (given that they use the correct powerscrolls),
+	// setting it to a value higher than default might make some playstyles (alien, wanted) undesirable aside from roleplay reasons, as well as diminish the benefits from
+	// certain endgame quests.  
 
 		public static int S_SkillBoost = 10;
 
@@ -421,7 +423,7 @@ namespace Server
 	// This is the body value for standard Wyrms. 723 is the newer, larger creatures. 12 is the classic wyrm where
 	// 59 is the dragon body.
 
-		public static int S_WyrmBody = 12;
+		public static int S_WyrmBody = 723;
 
 	// This number is the percentage chance that an enemy will fail to dispel a summoned creature. This check only
 	// occurs if the enemy can pass the various checks to even determine that they can dispel the summoned creature.
@@ -480,8 +482,8 @@ namespace Server
 	// rate than most of the creatures, and those particular creatures will use this spawn rate. They will then
 	// add additional minutes to reflect the longer spawn.
 
-		public static int S_SpawnMin = 60;
-		public static int S_SpawnMax = 120;
+		public static int S_SpawnMin = 45;
+		public static int S_SpawnMax = 60;
 
 
 	// This settings controls the limit in seconds by which you can be paralyzed by a monster. 
@@ -546,13 +548,13 @@ namespace Server
 	// Increasing this number will increase the prices of items sold from vendors, by this percentage.
 	// So a setting of 50 will increase prices by 50%.
 
-		public static int S_PriceMore = 25;
+		public static int S_PriceMore = 0;
 
 	// Increasing this number will increase the prices of sold resources (ingots, wood, etc) by the percentage.
 	// So a setting of 50 will increase resource sold prices by 50%. WARNING: This will stack with the increased
 	// prices set with the above setting.
 
-		public static int S_ResourcePrice = 25;
+		public static int S_ResourcePrice = 500;
 
 	// If true, then some merchants may sell large volumes of resources (ingots, ore, boards, leather, hides, cloth,
 	// bottles, jars, and blank scrolls) and more types, except for non-magical resources (reagents). The resources
@@ -582,7 +584,7 @@ namespace Server
 	// This is in the Merchant.cs file. WARNING: Vendors can only sell 250 different items. NOTE: Many settings
 	// here, that affect vendors, will not affect the custom merchant.
 
-		public static bool S_CustomMerchant = true;
+		public static bool S_CustomMerchant = false;
 
 
 
@@ -603,7 +605,7 @@ namespace Server
 	// false, the lawn items will refund the gold back to the character's bank box and the lawn tools will be
 	// removed from the game.
 
-		public static bool S_LawnsAllowed = true;
+		public static bool S_LawnsAllowed = false;
 
 	// When true (default setting), characters can use remodeling tools (from architects) to add items to their
 	// home like walls, doors, tiles, and other items. Remodeling tools require an amount of gold to place items.
@@ -638,13 +640,13 @@ namespace Server
 	// If true, then players can make use of the custom house system. Otherwise they can only purchase the
 	// pre-built classic houses.
 
-		public static bool S_AllowCustomHomes = true;
+		public static bool S_AllowCustomHomes = false;
 
 	// If true, the public basement system is active. This lets players buy basement doors for their homes
 	// and basement doors will appear in some trade shops. These lead to the same basement public area and
 	// is usually used for multiplayer game environments.
 
-		public static bool S_Basements = true;
+		public static bool S_Basements = false;
 
 	// If true, then anything you set in you home will never decay. This makes the housing system's storage
 	// capacity useless as any home can hold any amount of items, and it may convince players to never
@@ -654,7 +656,7 @@ namespace Server
 	// down if they are going to decorate their home and they want them unmovable or able to be manipulated
 	// with the homeowner tools.
 
-		public static bool S_HouseStorage = true;
+		public static bool S_HouseStorage = false;
 
 
 
@@ -673,14 +675,14 @@ namespace Server
 
 	// Set a 0-100 percent chance enemies will get a critical double damage hit against player controlled NPCs.
 
-		public static int S_CriticalToPets = 0;
+		public static int S_CriticalToPets = 20;
 
 	// If true, some areas will not allow you to mount a creature for riding. This makes dungeons (for example)
 	// more challenging. Player mounts get stabled when they go in certain areas like dungeons or caves and
 	// they will remount them when they leave these areas. Set to false if you do not want to limit where they
 	// take mounts. Keep in mind that having no mounts in dungeons does increase the difficulty.
 
-		public static bool S_NoMountsInCertainRegions = false;
+		public static bool S_NoMountsInCertainRegions = true;
 
 	// If true, then characters on mounts will dismount when they enter a building. They should mount their
 	// steed again when they leave.
@@ -757,16 +759,16 @@ namespace Server
 	// lose some equipment which is limited to stackable items like: potions, bandages, arrows, bolts, 
 	// gems, coins, jewels, crystals, reagents, bottles, food, and water.
 
-		public static bool S_GuardsSentenceDeath = false;
+		public static bool S_GuardsSentenceDeath = true;
 
 	// If true, guards will pay attention to enemies outside of their town borders.
 
-		public static bool S_GuardsPatrolOutside = true;
+		public static bool S_GuardsPatrolOutside = false;
 
 	// If true, guards will move quicker to catch criminals but this only works if they do not
 	// sentence them to death.
 
-		public static bool S_GuardsSprint = false;
+		public static bool S_GuardsSprint = true;
 
 	// If true, then adventurers that gather in towns may have a humanoid, pet, or summoned companion
 	// with them. These gatherings are when 2-4 adventurers stand in a circle and face each other,
