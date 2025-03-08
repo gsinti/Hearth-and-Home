@@ -126,7 +126,7 @@ namespace Server
 	// player has to find their corpse and potentially collect their belongings. The default for this setting is 10 minutes
 	// and the below is 110 minutes for a combined 2 hours or 120 minutes.
 
-		public static int S_CorpseDecay = 60 * 1;
+		public static int S_CorpseDecay = 60 * 1; // Hearth and Home cozy & casual play
 
 	// The below setting is the number of minutes that a player character bones will decay. This option, as well as the
 	// option above, could potentially be used to have player character corpses remain longer or for a more difficult style
@@ -134,7 +134,7 @@ namespace Server
 	// you want to use a more difficult style of play, then setting these two combined minutes to something long enough for
 	// an enemy player to take the dead character's belongings may be desired. The default is 110 minutes.
 
-		public static int S_BoneDecay = 60 * 48;
+		public static int S_BoneDecay = 60 * 48; // Hearth and Home cozy & casual play
 
   	// The setting below controls if mark/recall is available to traditionally restricted places like ambrosia, ravendark village, 
 	// caverns of poseidon and the like. Quest related worlds will remain blocked regardless of the chosen option. Default is true.
@@ -191,7 +191,7 @@ namespace Server
 	// This number can be set from 5 to 60, which determines the number of minutes that hunger and thirst are checked for
 	// reduction (default is 5).
 
-		public static int S_FoodCheck = 15;
+		public static int S_FoodCheck = 15; // Hearth and Home cozy & casual play
 
 	// Below is the guild base fee to join a guild. This is the intial cost to join the first guild. If you quit, and join
 	// another guild, then the fee will increase by that amount. It is based on the number of guild you were a member of
@@ -220,7 +220,7 @@ namespace Server
 	// Represents stat/skill loss (in percentage) when resurrecting without gold at a healer/ankh.
 	// This does not affect penalties for alien characters. Ranges from 0.0 to 10.0. The default is 5.0.
 
-		public static double S_DeathStatAndSkillLoss = 5.0;
+		public static double S_DeathStatAndSkillLoss = 1.0; // Hearth and Home cozy & casual play
 
 	// Spell damage toward monsters can be between 25 and 200 percent.
 
@@ -266,11 +266,11 @@ namespace Server
 
 	// The percent chance an item will be unidentified and no less than 10 percent.
 
-		public static int S_GetUnidentifiedChance = 25;
+		public static int S_GetUnidentifiedChance = 25; // Hearth and Home cozy & casual play
 
 	// If true, characters can only identify items (that require a double click) within their backpack.
 
-		public static bool S_IdentifyItemsOnlyInPack = false;
+		public static bool S_IdentifyItemsOnlyInPack = false; // Hearth and Home cozy & casual play
 
 	// This setting determines the loot filled on corpses and chests. The higher the number, the more
 	// often treasure will appear. The default and maximum is 100. Some enemies will generate a bit of
@@ -290,7 +290,7 @@ namespace Server
 	// The percent of gold you get from creatures, treasure, cargo, museum searches, shoppes, and some quests
 	// between 5 (low) to 100 (high).
 
-		public static int S_GetGoldCutRate = 50;
+		public static int S_GetGoldCutRate = 50; // Hearth and Home cozy & casual play
 
 	// The gold reward from bulletin board quests is modified below between 0 and 250 percent. It also modifies
 	// the thief note quests you get from whispering to the guildmaster, and the decorative items they steal.
@@ -310,12 +310,10 @@ namespace Server
 	// quest driven area, that has some quest requirements to be met before they can leave that area.
 
 		public static bool S_WarnSkaraBrae = true;
-		public static bool S_WarnSkaraBrae = true;
 
 	// If set to true (default), then a character will get a warning before they are entering the Bottle City. This area
 	// is an extensive quest driven area, that has some quest requirements to be met before they can leave that area.
 
-		public static bool S_WarnBottleCity = true;
 		public static bool S_WarnBottleCity = true;
 
 
@@ -331,12 +329,12 @@ namespace Server
 	// setting it to a value higher than default might make some playstyles (alien, wanted) undesirable aside from roleplay reasons, as well as diminish the benefits from
 	// certain endgame quests.  
 
-		public static int S_SkillBoost = 10;
+		public static int S_SkillBoost = 10; // Hearth and Home cozy & casual play
 
 	// To use special weapon abilities, this is the minimum skill level required (weapon skill and tactics) where the
 	// default is 70.0 (minimum of 20.0). Each ability requires 10 additional points above the previous (70, 80, 90, etc).
 
-		public static double S_SpecialWeaponAbilSkill = 50.0;
+		public static double S_SpecialWeaponAbilSkill = 50.0; // Hearth and Home cozy & casual play
 
 	// This number can be set from zero to 10, where 10 will give characters faster skill gain and zero
 	// leaves it normal (default).
@@ -372,14 +370,14 @@ namespace Server
 	// and stats will raise equatable to doing 1 or many at a time. Enabling this will also enable macroing.
 	// Enabling this will also disable the items you craft that use all resources like arrows, shafts, and kindling.
 
-		public static bool S_CraftMany = true;
+		public static bool S_CraftMany = true; // Hearth and Home cozy & casual play
 
 	// Setting the below value to true (default false) will only apply if the S_CraftMany setting is true.
 	// When viewing crafting line items, this will show the 1, 10, and 100 buttons next to each line item.
 	// If you want to allow players to craft many items at once, and don't want the trade window screen
 	// having many buttons on it, then leave this set to false.
 
-		public static bool S_CraftButtons = true;
+		public static bool S_CraftButtons = true; // Hearth and Home cozy & casual play
 
 	// The below value should be set to a whole number from 1-100, where the amount of resources one gets (ore,
 	// logs, hides, herbs, jars of body parts, meat, feathers, scales, wool, wheat, furs, fish, sand,
@@ -390,7 +388,7 @@ namespace Server
 	// successful resources are gathered (lumberjacking, mining, fishing, forensics, cooking, and inscription).
 	// Setting this greater than one will enable macroing.
 
-		public static int S_Resources = 5;
+		public static int S_Resources = 5; // Hearth and Home cozy & casual play
 
 	// Increasing this number will increase the price of enhancing items with extraordinary tools that are used by
 	// guild members, when next to their guildmasters. This value is a percentage increase from the base price.
@@ -399,16 +397,15 @@ namespace Server
 
 	// If false, characters will get a CAPTCHA windows occasionally to avoid unattended resource gathering with macros.
 
-		public static bool S_AllowMacroResources = true;
+		public static bool S_AllowMacroResources = true; // Hearth and Home cozy & casual play
 
 	// If false, then characters will need to have the appropriate tool equipped to craft.
 		
-		public static bool S_AllowBackpackCraftTool = true;
+		public static bool S_AllowBackpackCraftTool = true; // Hearth and Home cozy & casual play
 
 	// If false, then characters will need to have the appropriate tool equipped to gather resources.
 		
-		public static bool S_AllowBackpackHarvestTool = true;
-
+		public static bool S_AllowBackpackHarvestTool = true; // Hearth and Home cozy & casual play
 
 
 
@@ -418,7 +415,7 @@ namespace Server
 
 	// If true, all creatures will have an ability to detect hidden characters based on their difficulty level.
 
-		public static bool S_CreaturesSearching = false;
+		public static bool S_CreaturesSearching = false; // Hearth and Home cozy & casual play
 
 	// This is the body value for standard Wyrms. 723 is the newer, larger creatures. 12 is the classic wyrm where
 	// 59 is the dragon body.
@@ -453,7 +450,7 @@ namespace Server
 	// If true, then the land will spawn random powerful daemons/balrons/dragons/wyrms/angels/etc that will spread
 	// throughout the land.
 
-		public static bool S_Scary = false;
+		public static bool S_Scary = false; // Hearth and Home cozy & casual play
 
 	// These 5 settings control whether that particular land has safari animals spawn like elephants, giraffes, cheetahs, or zebras.
 	// These are values between 0 and 100, where 0 never occurs and 100 always does. Setting it to '50' would be 50% of the time.
@@ -468,7 +465,7 @@ namespace Server
 	// searching for blood. It only applies to creatures in dungeons, caves, or outside dangerous areas like
 	// cemeteries. If you change this, then run the [buildworld command when the server restarts.
 
-		public static bool S_LineOfSight = false;
+		public static bool S_LineOfSight = false; // Hearth and Home cozy & casual play
 
 	// If true, the purple named adventurers will attack nearby monsters and not just the characters that are
 	// criminals, murderers, or have low karma.
@@ -491,7 +488,7 @@ namespace Server
 	// value higher than 10 could mean that the paralyze cooldown is lower than its duration, 
 	// which can lead to frustrating fights as enemies can flee and chain-paralyze a character until they heal 
 	// enough to get back into the fight. 
-		public static double S_paralyzeDuration = 5.0;
+		public static double S_paralyzeDuration = 5.0; // Hearth and Home cozy & casual play
 
 	///////////////////////////////////////////////////////////////////////////////////////////////
 	// 008 - MERCHANTS ////////////////////////////////////////////////////////////////////////////
@@ -505,16 +502,16 @@ namespace Server
 
 	// If true (default false) then vendors will sell anything they normally stock. Some items have a default rarity % that this setting does not affect.
 
-		public static bool S_SellAll = true;
+		public static bool S_SellAll = true; // Hearth and Home cozy & casual play
 
 	// If true (default false) then vendors will buy anything they normally stock. Some items have a default rarity % that this setting does not affect.
 
-		public static bool S_BuyAll = true;
+		public static bool S_BuyAll = true; // Hearth and Home cozy & casual play
 
 	// If false, then vendors will NOT buy some tailor materials (cotton, flax, wool, regular cloth, and string).
 	// Does not affect a custom merchant that is set to buy such items.
 
-		public static bool S_BuyCloth = true;
+		public static bool S_BuyCloth = true; // Hearth and Home cozy & casual play
 
 	// If false, then vendors will not buy things from player characters. Merchant crates will also be disabled and act as normal containers.
 
@@ -535,11 +532,11 @@ namespace Server
 
 	// This setting is the percentage to decrease the prices of items that player characters sell to vendors. Zero disables this.
 
-		public static int S_SellGoldCutRate = 25;
+		public static int S_SellGoldCutRate = 25; // Hearth and Home cozy & casual play
 
 	// If true, then prices will fluctuate based on how good an item is and what stats it has, as well as the material it is made from.
 
-		public static bool S_QualityPrices = true;
+		public static bool S_QualityPrices = true; // Hearth and Home cozy & casual play
 
 	// If true, then players can buy merchant crates to lock down in their house to sell the items they craft.
 
@@ -569,7 +566,7 @@ namespace Server
 	// Consider leaving this true if you allow players to harvest many resources at once.
 	// (bandages, flax, ingots, cloth, boards, ore, hides, arrows, bones, scales, feathers, etc).
 
-		public static bool S_NoBuyResources = false;
+		public static bool S_NoBuyResources = false; // Hearth and Home cozy & casual play
 
 	// If true, then some vendors will have a black market option in their context menus. When used, a different
 	// purchasing screen will be presented to the player. They can see the special crafted items they have in
@@ -597,7 +594,7 @@ namespace Server
 	// then specify this dual ownership when choosing an item security level. The default setting is false, where
 	// co-owners have much more limited permissions as the standard game allows.
 
-		public static bool S_HouseOwners = true;
+		public static bool S_HouseOwners = true; // Hearth and Home cozy & casual play
 
 	// When true (default setting), characters can use lawn tools (from architects) to add items to the outside
 	// of their home like trees, shrubs, fences, lave, water, and other items. Lawn tools require an amount of
@@ -630,7 +627,7 @@ namespace Server
 
 	// The amount of houses an account's characters may own. A -1 setting will be unlimited.
 
-		public static int S_HousesPerAccount = -1;
+		public static int S_HousesPerAccount = -1; // Hearth and Home cozy & casual play
 
 	// If true, this means that the players can dye construction contracts so their pre-designed home is
 	// entirely in that same color.
@@ -671,7 +668,7 @@ namespace Server
 
 	// Increase this amount in decimal format to increase damage done to player controlled NPCs.
 
-		public static double S_DamageToPets = 1.0;
+		public static double S_DamageToPets = 1.0; // Hearth and Home cozy & casual play
 
 	// Set a 0-100 percent chance enemies will get a critical double damage hit against player controlled NPCs.
 
@@ -716,7 +713,7 @@ namespace Server
 	// This number can be set from 0 to 30, which determines the number of days before you can bond
 	// a pet one tamed (default is 7).
 
-		public static int S_BondDays = 3;
+		public static int S_BondDays = 3; // Hearth and Home cozy & casual play
 
 	// This adds additional follower slots above the default (5) and above those earned from skill mastery.
 	// Ranges from 0 to 8 (effectively doubling slots at max skills). The default is 0.
