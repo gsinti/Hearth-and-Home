@@ -126,7 +126,7 @@ namespace Server
 	// player has to find their corpse and potentially collect their belongings. The default for this setting is 10 minutes
 	// and the below is 110 minutes for a combined 2 hours or 120 minutes.
 
-		public static int S_CorpseDecay = 60;
+		public static int S_CorpseDecay = 60 * 1;
 
 	// The below setting is the number of minutes that a player character bones will decay. This option, as well as the
 	// option above, could potentially be used to have player character corpses remain longer or for a more difficult style
@@ -134,7 +134,7 @@ namespace Server
 	// you want to use a more difficult style of play, then setting these two combined minutes to something long enough for
 	// an enemy player to take the dead character's belongings may be desired. The default is 110 minutes.
 
-		public static int S_BoneDecay = 1380;
+		public static int S_BoneDecay = 60 * 24;
 
   	// The setting below controls if mark/recall is available to traditionally restricted places like ambrosia, ravendark village, 
 	// caverns of poseidon and the like. Quest related worlds will remain blocked regardless of the chosen option. Default is true.
