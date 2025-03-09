@@ -4,6 +4,12 @@
 
 Custom fork of [Secrets of Sosaria](https://github.com/Secrets-of-Sosaria/World) for personal use.
 
+## Prerequisites
+
+* [.NET Framework 4.0](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net40-offline-installer)
+* [ClassicUO desktop client](https://www.classicuo.eu/)
+* [Hearth and Home server files](https://github.com/gsinti/Hearth-and-Home/archive/refs/heads/main.zip)
+
 ## Setup
 
 * Copy `Saves.example` to `Saves`
