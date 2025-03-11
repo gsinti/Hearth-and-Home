@@ -718,7 +718,7 @@ namespace Server
 	// This adds additional follower slots above the default (5) and above those earned from skill mastery.
 	// Ranges from 0 to 8 (effectively doubling slots at max skills). The default is 0.
 
-		public static int S_AdditionalFollowerSlots = 0;
+		public static int S_AdditionalFollowerSlots = 2; // Hearth and Home cozy & casual play
 
 	// These settings affect the skill gain system for herding and taming. If the system bool is set 
 	// to true, the system will be active. If immersive messages is set to true, the game will display 
