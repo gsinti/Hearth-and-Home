@@ -14,7 +14,7 @@ Custom fork of [Secrets of Sosaria](https://github.com/Secrets-of-Sosaria/World)
 ## Setup
 
 * Copy `Saves.example` to `Saves`
-* Copy `Data/System/Source/bin/Debug/World.exe` to parent directory
+* Copy `Data/System/Source/World.exe` to parent directory
 * Launch `World.exe`
 
 Settings file is already pre-configured for **Hearth and Home** cozy & casual play.
