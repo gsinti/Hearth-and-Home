@@ -1,1 +1,0 @@
-Copy World.exe to parent directory of server installation.
