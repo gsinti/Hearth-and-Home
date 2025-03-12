@@ -27,10 +27,10 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-[assembly: AssemblyTitle("Adventure Game")]
-[assembly: AssemblyDescription("Adventure Game")]
+[assembly: AssemblyTitle("Hearth and Home")]
+[assembly: AssemblyDescription("Custom fork of Secrets of Sosaria")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Sosarian Secret Society")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
