@@ -713,7 +713,7 @@ namespace Server
 	// This number can be set from 0 to 30, which determines the number of days before you can bond
 	// a pet one tamed (default is 7).
 
-		public static int S_BondDays = 3; // Hearth and Home cozy & casual play
+		public static int S_BondDays = 1; // Hearth and Home cozy & casual play
 
 	// This adds additional follower slots above the default (5) and above those earned from skill mastery.
 	// Ranges from 0 to 8 (effectively doubling slots at max skills). The default is 0.
