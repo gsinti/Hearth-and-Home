@@ -233,12 +233,12 @@ namespace Server
 	// Maximum amount of lower reagent percentage, up to 100 for 100%. For equipment with lower reagent properties.
 	// Setting it to zero will disable the attribute from the game.
 
-		public static int S_LowerReg = 50;
+		public static int S_LowerReg = 75; // Hearth and Home cozy & casual play
 
 	// Maximum aount of lower mana percentage, up to 100 for 100%. For equipment with lower mana properties.
 	// Setting it to zero will disable the attribute from the game.
 
-		public static int S_LowerMana = 40;
+		public static int S_LowerMana = 60; // Hearth and Home cozy & casual play
 
 	// This setting between 0.5 and 3.0 (decimal format) will give a character that much hit points, mana, or stamina based
 	// on the attribute. So a strength of 100 will give a character 200 hit points if this is set at 2.0.
