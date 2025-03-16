@@ -602,7 +602,7 @@ namespace Server
 	// false, the lawn items will refund the gold back to the character's bank box and the lawn tools will be
 	// removed from the game.
 
-		public static bool S_LawnsAllowed = false;
+		public static bool S_LawnsAllowed = true;
 
 	// When true (default setting), characters can use remodeling tools (from architects) to add items to their
 	// home like walls, doors, tiles, and other items. Remodeling tools require an amount of gold to place items.
