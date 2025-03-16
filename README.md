@@ -17,4 +17,4 @@ Custom fork of [Secrets of Sosaria](https://github.com/Secrets-of-Sosaria/World)
 * Copy `Data/System/Source/World.exe` to parent directory
 * Launch `World.exe`
 
-Settings file is already pre-configured for **Hearth and Home** cozy & casual play.
+Settings file is already pre-configured for **Hearth and Home** cozy & casual playstyle.
