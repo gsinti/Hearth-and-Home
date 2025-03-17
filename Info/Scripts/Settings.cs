@@ -98,7 +98,7 @@ namespace Server
 
 	// If true, anytime a character makes a saving throw to avoid a trap will be notified. Otherwise, they will never know they avoided it.
 
-		public static bool S_AnnounceTrapSaves = false;
+		public static bool S_AnnounceTrapSaves = true;
 
 	// If true, then dungeon environments will have random sounds as you traverse the corridors.
 
