@@ -756,16 +756,16 @@ namespace Server
 	// lose some equipment which is limited to stackable items like: potions, bandages, arrows, bolts, 
 	// gems, coins, jewels, crystals, reagents, bottles, food, and water.
 
-		public static bool S_GuardsSentenceDeath = true;
+		public static bool S_GuardsSentenceDeath = false; // Hearth and Home cozy & casual playstyle
 
 	// If true, guards will pay attention to enemies outside of their town borders.
 
-		public static bool S_GuardsPatrolOutside = false;
+		public static bool S_GuardsPatrolOutside = true; // Hearth and Home cozy & casual playstyle
 
 	// If true, guards will move quicker to catch criminals but this only works if they do not
 	// sentence them to death.
 
-		public static bool S_GuardsSprint = true;
+		public static bool S_GuardsSprint = false; // Hearth and Home cozy & casual playstyle
 
 	// If true, then adventurers that gather in towns may have a humanoid, pet, or summoned companion
 	// with them. These gatherings are when 2-4 adventurers stand in a circle and face each other,
