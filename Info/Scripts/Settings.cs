@@ -404,7 +404,7 @@ namespace Server
 		public static bool S_AllowBackpackCraftTool = true; // Hearth and Home cozy & casual playstyle
 
 	// If false, then characters will need to have the appropriate tool equipped to gather resources.
-		
+	// Affects harvest tools that serve additional purposes (such as grave digging or hunting treasure).
 		public static bool S_AllowBackpackHarvestTool = true; // Hearth and Home cozy & casual playstyle
 
 
