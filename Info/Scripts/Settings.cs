@@ -540,7 +540,7 @@ namespace Server
 
 	// If true, then players can buy merchant crates to lock down in their house to sell the items they craft.
 
-		public static bool S_MerchantCrates = false;
+		public static bool S_MerchantCrates = true; // Hearth and Home cozy & casual playstyle
 
 	// Increasing this number will increase the prices of items sold from vendors, by this percentage.
 	// So a setting of 50 will increase prices by 50%.
@@ -610,7 +610,7 @@ namespace Server
 	// remodeling items will refund the gold back to the character's bank box and the remodeling tools will be
 	// removed from the game.
 
-		public static bool S_ShantysAllowed = false;
+		public static bool S_ShantysAllowed = true; // Hearth and Home cozy & casual playstyle
 
 	// The number of days, no less than 5.0 (decimal format), that a boat or magic carpet will decay if on
 	// the sea not used.
@@ -637,13 +637,13 @@ namespace Server
 	// If true, then players can make use of the custom house system. Otherwise they can only purchase the
 	// pre-built classic houses.
 
-		public static bool S_AllowCustomHomes = false;
+		public static bool S_AllowCustomHomes = true; // Hearth and Home cozy & casual playstyle
 
 	// If true, the public basement system is active. This lets players buy basement doors for their homes
 	// and basement doors will appear in some trade shops. These lead to the same basement public area and
 	// is usually used for multiplayer game environments.
 
-		public static bool S_Basements = false;
+		public static bool S_Basements = true; // Hearth and Home cozy & casual playstyle
 
 	// If true, then anything you set in you home will never decay. This makes the housing system's storage
 	// capacity useless as any home can hold any amount of items, and it may convince players to never
@@ -653,7 +653,7 @@ namespace Server
 	// down if they are going to decorate their home and they want them unmovable or able to be manipulated
 	// with the homeowner tools.
 
-		public static bool S_HouseStorage = false;
+		public static bool S_HouseStorage = true; // Hearth and Home cozy & casual playstyle
 
 
 
