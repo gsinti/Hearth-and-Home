@@ -8,7 +8,7 @@ namespace Server.Custom.KoperPets
     public static class KoperHerdingGain
     {
         private static readonly Dictionary<Mobile, DateTime> _cooldowns = new Dictionary<Mobile, DateTime>();
-        private static readonly TimeSpan CooldownTime = TimeSpan.FromSeconds(MyServerSettings.KoperCooldown()); // 20-second cooldown
+        private static readonly TimeSpan CooldownTime = TimeSpan.FromSeconds(MyServerSettings.KoperCooldown()); //  Set cooldown time (20 Seconds default)
 
         private static readonly string[] SuccessMessages = new string[]
         {
@@ -31,8 +31,39 @@ namespace Server.Custom.KoperPets
 
         public static void TryGainHerdingSkill(Mobile owner)
         {
-            if (owner == null || !owner.Alive || !MyServerSettings.KoperPets())
-                return; // No skill gain for dead players/system disabled
+
+            bool hasNonSummoned = false;
+            bool hasNonHumanBody = false;
+
+            if (owner.Map != null)
+            {
+            	IPooledEnumerable eable = owner.Map.GetMobilesInRange(owner.Location, 5);
+
+            	foreach (Mobile m in eable)
+            	{
+            		if (m is BaseCreature)
+            		{
+            			BaseCreature pet = (BaseCreature)m;
+                        // we need to check if the player has followers that are not summons or henchman before applying the rest of the function
+            			if (pet.Controlled && pet.ControlMaster == owner)
+            			{
+            				if (!pet.Summoned)
+            					hasNonSummoned = true;
+
+            				if (!pet.Body.IsHuman)
+            					hasNonHumanBody = true;
+
+            				if (hasNonSummoned && hasNonHumanBody)
+            					break;
+            			}
+            		}
+            	}
+            	eable.Free();
+            }
+
+
+            if (owner == null || !owner.Alive || !MyServerSettings.KoperPets() || !hasNonSummoned || !hasNonHumanBody)
+                return; // No skill gain for dead players/system disabled// or players that have only summons or henchman
 
             // Check if the player is on cooldown
             if (_cooldowns.ContainsKey(owner) && DateTime.UtcNow < _cooldowns[owner])
@@ -42,23 +73,21 @@ namespace Server.Custom.KoperPets
 
             double herdingSkill = owner.Skills[SkillName.Herding].Base;
             double gainChance;
-            double minGain;
-            double maxGain;
             double herdingMultiplier = MyServerSettings.KoperHerdingChance();
 
 
             // Determine gain chance and amount based on skill level
             if (herdingMultiplier <= 0) herdingMultiplier = 1.0; // Ensure valid value
-            if (herdingSkill <= 30.0) { gainChance = 0.20 * herdingMultiplier; minGain = 0.1; maxGain = 1.0; }
-            else if (herdingSkill <= 50.0) { gainChance = 0.15 * herdingMultiplier; minGain = 0.1; maxGain = 0.5; }
-            else if (herdingSkill <= 70.0) { gainChance = 0.10 * herdingMultiplier; minGain = 0.1; maxGain = 0.2; }
-            else if (herdingSkill < 100.0) { gainChance = 0.05 * herdingMultiplier; minGain = 0.1; maxGain = 0.1; }
+            if (herdingMultiplier >= 10) herdingMultiplier = 10.0; // Ensure valid value
+            if (herdingSkill <= 30.0) { gainChance = 0.20 * herdingMultiplier;}
+            else if (herdingSkill <= 50.0) { gainChance = 0.15 * herdingMultiplier;}
+            else if (herdingSkill <= 70.0) { gainChance = 0.10 * herdingMultiplier;}
+            else if (herdingSkill < 125.0) { gainChance = 0.05 * herdingMultiplier;}
             else return; // No gain if at max skill
 
             if (Utility.RandomDouble() <= gainChance)
             {
-                double skillGain = Utility.RandomDouble() * (maxGain - minGain) + minGain;
-                owner.Skills[SkillName.Herding].Base += skillGain;
+                owner.CheckSkill(SkillName.Herding, 0.0 , 125.0 );
 
                 // Select a random message for variety
                 if (MyServerSettings.KoperPetsImmersive()) 

@@ -6348,7 +6348,7 @@ namespace Server.Mobiles
 
 		public bool DispelChecks( Mobile m )
 		{
-			double DispelChance = 0.75; // 75% chance to dispel at gm magery
+			double DispelChance = 0.33; // 33% chance to dispel at gm magery
 
 			bool willDispel = true;
 			int nope = MySettings.S_DispelFailure;
@@ -7599,15 +7599,18 @@ namespace Server.Mobiles
 				}
 				else
 				{
-					int setTime = Utility.RandomMinMax( 10, 25 );
-					p.PeacedUntil = DateTime.Now + TimeSpan.FromSeconds( setTime );
+					double skillMax = (double)bard / 100;
+					int min = (int)(10 * skillMax);
+					int max = (int)(25 * skillMax);
+					TimeSpan duration = TimeSpan.FromSeconds( Utility.RandomMinMax( min, max ) );
+					p.PeacedUntil = DateTime.Now + duration;
 					p.SendLocalizedMessage( 500616 ); // You hear lovely music, and forget to continue battling!
 					p.Combatant = null;
 					target.Warmode = false;
 					UndressItem( target, Layer.OneHanded );
 					UndressItem( target, Layer.TwoHanded );
 					BuffInfo.RemoveBuff( p, BuffIcon.PeaceMaking );
-					BuffInfo.AddBuff( p, new BuffInfo( BuffIcon.PeaceMaking, 1063664, TimeSpan.FromSeconds( setTime ), p ) );
+					BuffInfo.AddBuff( p, new BuffInfo( BuffIcon.PeaceMaking, 1063664, duration, p ) );
 				}
 			}
 
@@ -8022,7 +8025,7 @@ namespace Server.Mobiles
 					if ( lantern is SoulLantern )
 					{
 						SoulLantern souls = (SoulLantern)lantern;
-						souls.TrappedSouls = souls.TrappedSouls + this.TotalGold;
+						souls.TrappedSouls = souls.TrappedSouls + (this.TotalGold*2);
 						if ( souls.TrappedSouls > 100000 ){ souls.TrappedSouls = 100000; }
 						souls.InvalidateProperties();
 
@@ -8057,7 +8060,8 @@ namespace Server.Mobiles
 					if ( symbol is HolySymbol )
 					{
 						HolySymbol banish = (HolySymbol)symbol;
-						banish.BanishedEvil = banish.BanishedEvil + this.TotalGold;
+						// doubles the base gold calculation for more priest points
+						banish.BanishedEvil = (banish.BanishedEvil + (this.TotalGold)*2);
 						if ( banish.BanishedEvil > 100000 ){ banish.BanishedEvil = 100000; }
 						banish.InvalidateProperties();
 

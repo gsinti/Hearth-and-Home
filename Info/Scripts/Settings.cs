@@ -116,8 +116,8 @@ namespace Server
 
 	// There are almost 300 classic artifacts in the game, as well as artifacts created for this game that are specifically named
 	// and designed. These are items like 'Stormbringer' or 'Conan's Lost Sword'. By default, these items will retain their
-	// appearance and color no matter what is done to them. Setting this to true will allow a player to use items like the Magic
-	// Scissors or Magic Hammer to change the appearance of the items, but they will always retain their name. This is false by default.
+	// appearance and color no matter what is done to them. Setting this to true will allow a player to use items to change the appearance of the items, 
+	// but they will always retain their name. This is false by default.
 
 		public static bool S_ChangeArtyLook = false;
 
@@ -306,15 +306,15 @@ namespace Server
 
 		public static bool S_PedStealThrottle = true;
 
-	// If set to true, then a character will get a warning before they are entering Skara Brae. This area is a
+	// If set to true (default), then a character will get a warning before they are entering Skara Brae. This area is an extensive
 	// quest driven area, that has some quest requirements to be met before they can leave that area.
 
-		public static bool S_WarnSkaraBrae = true; // Hearth and Home cozy & casual playstyle
+		public static bool S_WarnSkaraBrae = true;
 
-	// If set to true, then a character will get a warning before they are entering the Bottle City. This area
-	// is a quest driven area, that has some quest requirements to be met before they can leave that area.
+	// If set to true (default), then a character will get a warning before they are entering the Bottle City. This area
+	// is an extensive quest driven area, that has some quest requirements to be met before they can leave that area.
 
-		public static bool S_WarnBottleCity = true; // Hearth and Home cozy & casual playstyle
+		public static bool S_WarnBottleCity = true;
 
 
 
@@ -737,7 +737,7 @@ namespace Server
 		public static double S_KoperHerdingChance = 1.0;
 
 	// The KoperCooldown sets the minimum amount of time in seconds between taming/herding skill gain
-	// from fighting for taming, and commanding pets for herding. Minimum is 0, max is 600
+	// from fighting for taming, and commanding pets for herding. Minimum is 0, max is 600, default is 20.
 
 		public static int S_KoperCooldown = 20;
 

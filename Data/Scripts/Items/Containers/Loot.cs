@@ -135,11 +135,7 @@ namespace Server
 				typeof( BoneSkirt ),			typeof( HideChest ), 				typeof( HikingBoots ),
 				typeof( SavageArms ), 			typeof( SavageChest ), 				typeof( SavageGloves ),
 				typeof( SavageHelm ), 			typeof( SavageLegs ),				typeof( StuddedHideChest ),
-				typeof( DragonChest ),			typeof( DragonGloves ),				typeof( DragonLegs ),
-				typeof( ScaledLegs ),			typeof( ScaledArms ),				typeof( ScaledChest ),
-				typeof( ScaledGloves ),			typeof( ScaledGorget ),				typeof( ScaledHelm ),
-				typeof( ScalyArms ),			typeof( ScalyLegs ),				typeof( ScalyHelm ),
-				typeof( ScalyGorget ),			typeof( ScalyGloves ),				typeof( ScalyChest )
+				typeof( DragonChest ),			typeof( DragonGloves ),				typeof( DragonLegs )			
 			};
 
 		public static Type[] ArmorTypes{ get{ return m_ArmorTypes; } }
@@ -153,8 +149,7 @@ namespace Server
 				typeof( WoodenShield ),			typeof( SunShield ),			typeof( VirtueShield ),
 				typeof( ChaosShield ),			typeof( OrderShield ),			typeof( RoyalShield ),
 				typeof( GuardsmanShield ),		typeof( ElvenShield ),			typeof( DarkShield ),
-				typeof( CrestedShield ),		typeof( ChampionShield ),		typeof( JeweledShield ),
-				typeof( ScalemailShield ),		typeof( ScaledShield )
+				typeof( CrestedShield ),		typeof( ChampionShield ),		typeof( JeweledShield )
 			};
 
 		public static Type[] ShieldTypes{ get{ return m_ShieldTypes; } }
@@ -510,7 +505,7 @@ namespace Server
 
 		private static Type[] m_ArtyTypes = new Type[]
 			{
-				typeof( Artifact_AbysmalGloves ), 	typeof( Artifact_ArmsOfTheHarrower ), 	typeof( Artifact_CandleEnergy ), 	typeof( Artifact_DivineLeggings ), 	typeof( Artifact_GeishasObi ), 	typeof( Artifact_HolyKnightsArmPlates ), 	typeof( Artifact_JesterHatofChuckles ), 	typeof( Artifact_MidnightBracers ), 	typeof( Artifact_RamusNecromanticScalpel ), 	typeof( Artifact_ShadowDancerTunic ), 	typeof( Artifact_TotemGloves ), 	typeof( QuiverOfRage ),
+				typeof ( EternalPowerScroll), 		typeof( Artifact_AbysmalGloves ), 	typeof( Artifact_ArmsOfTheHarrower ), 	typeof( Artifact_CandleEnergy ), 	typeof( Artifact_DivineLeggings ), 	typeof( Artifact_GeishasObi ), 	typeof( Artifact_HolyKnightsArmPlates ), 	typeof( Artifact_JesterHatofChuckles ), 	typeof( Artifact_MidnightBracers ), 	typeof( Artifact_RamusNecromanticScalpel ), 	typeof( Artifact_ShadowDancerTunic ), 	typeof( Artifact_TotemGloves ), 	typeof( QuiverOfRage ),
 				typeof( Artifact_AchillesShield ), 	typeof( Artifact_ArmsOfToxicity ), 	typeof( Artifact_CandleFire ), 	typeof( Artifact_DivineTunic ), 	typeof( Artifact_GiantBlackjack ), 	typeof( Artifact_HolyKnightsBreastplate ), 	typeof( Artifact_JinBaoriOfGoodFortune ), 	typeof( Artifact_MidnightGloves ), 	typeof( Artifact_ResilientBracer ), 	typeof( Artifact_ShaMontorrossbow ), 	typeof( Artifact_TotemGorget ), 	typeof( Artifact_RobeofStratos ),
 				typeof( Artifact_AchillesSpear ), 	typeof( Artifact_AuraOfShadows ), 	typeof( Artifact_CandleNecromancer ), 	typeof( Artifact_DjinnisRing ), 	typeof( Artifact_GladiatorsCollar ), 	typeof( Artifact_HolyKnightsGloves ), 	typeof( Artifact_KamiNarisIndestructableDoubleAxe ), 	typeof( Artifact_MidnightHelm ), 	typeof( Artifact_Retort ), 	typeof( Artifact_ShardThrasher ), 	typeof( Artifact_TotemLeggings ), 	typeof( Artifact_BootsofHydros ),
 				typeof( Artifact_AcidProofRobe ), 	typeof( Artifact_AxeOfTheHeavens ), 	typeof( Artifact_CandlePoison ), 	typeof( Artifact_DreadPirateHat ), 	typeof( Artifact_GlassSword ), 	typeof( Artifact_HolyKnightsGorget ), 	typeof( Artifact_KodiakBearMask ), 	typeof( Artifact_MidnightLegs ), 	typeof( Artifact_RighteousAnger ), 	typeof( Artifact_ShieldOfInvulnerability ), 	typeof( Artifact_TotemOfVoid ), 	typeof( Artifact_BootsofLithos ),
@@ -539,7 +534,11 @@ namespace Server
 				typeof( Artifact_ArmsOfFortune ), 	typeof( Artifact_BreathOfTheDead ), 	typeof( Artifact_DivineArms ), 	typeof( Artifact_GandalfsHat ), 	typeof( Artifact_HelmOfAegis ), 	typeof( Artifact_JackalsHelm ), 	typeof( Artifact_MarbleShield ), 	typeof( Artifact_PolarBearMask ), 	typeof( Artifact_ShadowDancerCap ), 	typeof( Artifact_TheTaskmaster ), 	typeof( QuiverOfFire ), 	
 				typeof( Artifact_ArmsOfInsight ), 	typeof( Artifact_BurglarsBandana ), 	typeof( Artifact_DivineCountenance ), 	typeof( Artifact_GandalfsRobe ), 	typeof( Artifact_HelmOfBrilliance ), 	typeof( Artifact_JackalsLeggings ), 	typeof( Artifact_MauloftheBeast ), 	typeof( Artifact_PowerSurge ), 	typeof( Artifact_ShadowDancerGloves ), 	typeof( Artifact_TitansHammer ), 	typeof( QuiverOfIce ), 	
 				typeof( Artifact_ArmsOfNobility ), 	typeof( Artifact_Calm ), 	typeof( Artifact_DivineGloves ), 	typeof( Artifact_GandalfsStaff ), 	typeof( Artifact_HelmOfInsight ), 	typeof( Artifact_JackalsTunic ), 	typeof( Artifact_MaulOfTheTitans ), 	typeof( Artifact_Quell ), 	typeof( Artifact_ShadowDancerGorget ), 	typeof( Artifact_TorchOfTrapFinding ), 	typeof( QuiverOfInfinity ), 	
-				typeof( Artifact_ArmsOfTheFallenKing ), 	typeof( Artifact_CandleCold ), 	typeof( Artifact_DivineGorget ), 	typeof( Artifact_GauntletsOfNobility ), 	typeof( Artifact_HelmOfSwiftness ), 	typeof( Artifact_JadeScimitar ), 	typeof( Artifact_MelisandesCorrodedHatchet ), 	typeof( Artifact_RaedsGlory ), 	typeof( Artifact_ShadowDancerLeggings ), 	typeof( Artifact_TotemArms ), 	typeof( QuiverOfLightning )
+				typeof( Artifact_ArmsOfTheFallenKing ), 	typeof( Artifact_CandleCold ), 	typeof( Artifact_DivineGorget ), 	typeof( Artifact_GauntletsOfNobility ), typeof( Artifact_HelmOfSwiftness ), 	typeof( Artifact_JadeScimitar ), 	typeof( Artifact_MelisandesCorrodedHatchet ), 	typeof( Artifact_RaedsGlory ), 	typeof( Artifact_ShadowDancerLeggings ), 	typeof( Artifact_TotemArms ), 	typeof( QuiverOfLightning ), 
+				typeof ( Artifact_GlovesOfThePiper ), typeof ( Artifact_PiedPiperFeatheredHat ), typeof ( Artifact_ShirtOfThePiper ), typeof ( Artifact_BootsOfThePiper ), typeof ( Artifact_TrousersOfThePiper ), typeof ( Artifact_NatureVengeanceMask ), typeof ( Artifact_NatureVengeanceCoat ), typeof ( Artifact_NatureVengeanceLeggings ), typeof ( Artifact_NatureVengeanceArms ), typeof ( Artifact_NatureVengeanceGloves ), typeof ( Artifact_NatureMasterHeaddress ), typeof ( Artifact_NatureMasterCoat ), typeof ( Artifact_NatureMasterLeggings ), typeof ( Artifact_NatureMasterArms ), typeof ( Artifact_NatureMasterGloves ),
+				typeof ( Artifact_ProtectoroftheWildsChestplate ), typeof ( Artifact_ProtectoroftheWildsLeggings ), typeof ( Artifact_ProtectoroftheWildsGloves ), typeof ( Artifact_ProtectoroftheWildsArms ),
+				typeof ( Artifact_ProtectoroftheWildsHelmet ), typeof ( Artifact_ProwleroftheWildsHelmet ), typeof ( Artifact_ProwleroftheWildsLegging ), typeof ( Artifact_ProwleroftheWildsGloves ),
+				typeof ( Artifact_ProwleroftheWildsTunic ), typeof ( Artifact_ProwleroftheWildsArms ), typeof ( Artifact_RobeOfWilds ), typeof ( Artifact_RobeOfWildLegion ), typeof ( Artifact_StaffoftheWoodlands ), typeof ( Artifact_BowOfTheProwler ), typeof ( Artifact_BladeOfTheWilds ), typeof ( Artifact_WhistleofthePiper )
 			};
 		public static Type[] ArtyTypes{ get{ return m_ArtyTypes; } }
 
@@ -668,12 +667,12 @@ namespace Server
 
 		private static Type[] m_RareItemTypes = new Type[]
 			{
-				typeof( SkeletonsKey ),			typeof( PaintCanvas ),					typeof( MagicalDyes ),
-				typeof( HeavySharpeningStone ),	typeof( ConsecratedSharpeningStone ),	typeof( MyCircusTentEastAddonDeed ),
+				typeof( SkeletonsKey ),			typeof( MagicalDyes ),
+				typeof( HeavyEnhancementStone ),typeof( ConsecratedEnhancementStone ),	typeof( MyCircusTentEastAddonDeed ),
 				typeof( ManyArrows100 ),		typeof( ManyBolts100 ),					typeof( MyTentSouthAddonDeed ),
-				typeof( RoughSharpeningStone ),	typeof( DenseSharpeningStone ),			typeof( ElementalSharpeningStone ),
+				typeof( RoughEnhancementStone ),typeof( DenseEnhancementStone ),		typeof( ElementalEnhancementStone ),
 				typeof( ArtifactManual ),		typeof( light_dragon_brazier ), 		typeof( MoonStone ),
-				typeof( CrystallineJar ),		typeof( TrophyBase ),					typeof( DockingLantern ),
+				typeof( CrystallineJar ),		typeof( TrophyBase ),					typeof( EtherealPowerScroll),
 				typeof( BoatBuild ),			typeof( TrapKit ),						typeof( MalletStake ), 
 				typeof( CandleLarge ),			typeof( Candelabra ),					typeof( CandelabraStand ),
 				typeof( HairDyeBottle ),		typeof( GothicCandelabraA ),			typeof( GothicCandelabraB ),
@@ -697,6 +696,28 @@ namespace Server
 			};
 
 		public static Type[] RareItemTypes{ get{ return m_RareItemTypes; } }
+
+		// ------------------------------------------------------------------------------------------------------------------------------------------
+		private static Type[] m_AdventurerRareItemTypes = new Type[]
+			{
+				typeof( SkeletonsKey ),			typeof( MagicalDyes ),					typeof( EtherealPowerScroll),
+				typeof( HeavyEnhancementStone ),typeof( ConsecratedEnhancementStone ),	typeof( SummonPrison ),
+				typeof( MagicPigment ),			typeof( RunicHammer ),					typeof( RunicSaw ),
+				typeof( RoughEnhancementStone ),typeof( DenseEnhancementStone ),		typeof( ElementalEnhancementStone ),
+				typeof( ArtifactManual ),		typeof( Runebook ),						typeof( FrankenJournalInBox ),
+				typeof( CrystallineJar ),		typeof( DockingLantern ),				typeof( RunicFletching ),
+				typeof( BoatBuild ),			typeof( MalletStake ), 					typeof( PetBondDeed ),
+				typeof( HairDyeBottle ),		typeof( MagicalWand ),					typeof( MagicalWand ),
+				typeof( RareAnvil ),			typeof( MasterSkeletonsKey ),			typeof( InvulnerabilityPotion ),
+				typeof( AlternateRealityMap ),	typeof( UnusualDyes ),					typeof( RunicLeatherKit ),
+				typeof( CarpetBuild ),			typeof( RunicScales ),					typeof( GolemManual ),
+				typeof( SmallHollowBook ),		typeof( LargeHollowBook ),				typeof( RecallRune),
+				typeof( SlaversNet ),			typeof( TelescopeAddonDeed ),			typeof( RunicUndertaker ),
+				typeof( RunicTinker ),			typeof( RunicSewingKit )				
+			};
+
+		public static Type[] AdventurerRareItemTypes{ get{ return m_RareItemTypes; } }
+		// ------------------------------------------------------------------------------------------------------------------------------------------
 
 		// ------------------------------------------------------------------------------------------------------------------------------------------
 
