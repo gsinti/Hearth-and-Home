@@ -106,13 +106,13 @@ namespace Server
 
 	// If true, then the strange portals that lead to deep and dangerous dungeons will have an exit portal.
 
-		public static bool S_PortalExits = true;
+		public static bool S_PortalExits = true; // Hearth and Home cozy & casual playstyle
 
 	// If set to 1,000 gold or higher, then the bribery system will be enabled that allows characters to give this amount of gold
 	// to the Assassin Guildmaster so they can bribe the right people and remove a murder count one at a time (never applies to
 	// fugitives, and assassin guild members only pay half this amount).
 
-		public static int S_Bribery = 5000;
+		public static int S_Bribery = 5000; // Hearth and Home cozy & casual playstyle
 
 	// There are almost 300 classic artifacts in the game, as well as artifacts created for this game that are specifically named
 	// and designed. These are items like 'Stormbringer' or 'Conan's Lost Sword'. By default, these items will retain their
@@ -147,7 +147,7 @@ namespace Server
 
 	// If true, a player character cannot use macros to improve their skills quickly.
 
-		public static bool S_NoMacroing = false;
+		public static bool S_NoMacroing = false; // Hearth and Home cozy & casual playstyle
 
 	// You can increase the rate that stats gain from 50.0 (slow) to 10.0 (fast).
 
@@ -186,7 +186,7 @@ namespace Server
 	// If true, then characters will not get hungry or thirsty when inside places like banks, inns, or houses...allowing you
 	// to step away from the game without your character starving eventually.
 
-		public static bool S_Belly = true;
+		public static bool S_Belly = true; // Hearth and Home cozy & casual playstyle
 
 	// This number can be set from 5 to 60, which determines the number of minutes that hunger and thirst are checked for
 	// reduction (default is 5).
@@ -200,7 +200,7 @@ namespace Server
 	// it will be the flat fee every time. The minimum fee to join a guild is 200 gold.
 
 		public static int S_GuildJoinFee = 2000;
-		public static bool S_GuildIncrease = false;
+		public static bool S_GuildIncrease = false; // Hearth and Home cozy & casual playstyle
 
 	// This number is the maximum value a player character resistance can be, and it must be between 40 and 90.
 	// The system default is 70. If you set this to 60, then a player can only achieve a maximum of 60 in each of the
@@ -243,7 +243,7 @@ namespace Server
 	// This setting between 0.5 and 3.0 (decimal format) will give a character that much hit points, mana, or stamina based
 	// on the attribute. So a strength of 100 will give a character 200 hit points if this is set at 2.0.
 
-		public static double S_PlayerLevelMod = 2.0;
+		public static double S_PlayerLevelMod = 2.0; // Hearth and Home cozy & casual playstyle
 
 	// If true, then characters will be able to set a custom title for their character in the HELP section.
 
@@ -404,7 +404,7 @@ namespace Server
 		public static bool S_AllowBackpackCraftTool = true; // Hearth and Home cozy & casual playstyle
 
 	// If false, then characters will need to have the appropriate tool equipped to gather resources.
-		
+	// Affects harvest tools that serve additional purposes (such as grave digging or hunting treasure).
 		public static bool S_AllowBackpackHarvestTool = true; // Hearth and Home cozy & casual playstyle
 
 
@@ -540,7 +540,7 @@ namespace Server
 
 	// If true, then players can buy merchant crates to lock down in their house to sell the items they craft.
 
-		public static bool S_MerchantCrates = false;
+		public static bool S_MerchantCrates = true; // Hearth and Home cozy & casual playstyle
 
 	// Increasing this number will increase the prices of items sold from vendors, by this percentage.
 	// So a setting of 50 will increase prices by 50%.
@@ -602,7 +602,7 @@ namespace Server
 	// false, the lawn items will refund the gold back to the character's bank box and the lawn tools will be
 	// removed from the game.
 
-		public static bool S_LawnsAllowed = true;
+		public static bool S_LawnsAllowed = true; // Hearth and Home cozy & casual playstyle
 
 	// When true (default setting), characters can use remodeling tools (from architects) to add items to their
 	// home like walls, doors, tiles, and other items. Remodeling tools require an amount of gold to place items.
@@ -610,7 +610,7 @@ namespace Server
 	// remodeling items will refund the gold back to the character's bank box and the remodeling tools will be
 	// removed from the game.
 
-		public static bool S_ShantysAllowed = false;
+		public static bool S_ShantysAllowed = true; // Hearth and Home cozy & casual playstyle
 
 	// The number of days, no less than 5.0 (decimal format), that a boat or magic carpet will decay if on
 	// the sea not used.
@@ -623,7 +623,7 @@ namespace Server
 
 	// If false, then houses never decay and the above setting is ignored.
 
-		public static bool S_HousesDecay = false;
+		public static bool S_HousesDecay = false; // Hearth and Home cozy & casual playstyle
 
 	// The amount of houses an account's characters may own. A -1 setting will be unlimited.
 
@@ -637,13 +637,13 @@ namespace Server
 	// If true, then players can make use of the custom house system. Otherwise they can only purchase the
 	// pre-built classic houses.
 
-		public static bool S_AllowCustomHomes = false;
+		public static bool S_AllowCustomHomes = true; // Hearth and Home cozy & casual playstyle
 
 	// If true, the public basement system is active. This lets players buy basement doors for their homes
 	// and basement doors will appear in some trade shops. These lead to the same basement public area and
 	// is usually used for multiplayer game environments.
 
-		public static bool S_Basements = false;
+		public static bool S_Basements = true; // Hearth and Home cozy & casual playstyle
 
 	// If true, then anything you set in you home will never decay. This makes the housing system's storage
 	// capacity useless as any home can hold any amount of items, and it may convince players to never
@@ -653,7 +653,7 @@ namespace Server
 	// down if they are going to decorate their home and they want them unmovable or able to be manipulated
 	// with the homeowner tools.
 
-		public static bool S_HouseStorage = false;
+		public static bool S_HouseStorage = true; // Hearth and Home cozy & casual playstyle
 
 
 
