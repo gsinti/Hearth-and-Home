@@ -1516,6 +1516,11 @@ namespace Server.Mobiles
 
 			m_NextMovementTime += speed;
 
+			if (Alive && MySettings.S_PlayerTerrainFootstepSounds)
+			{
+				PlayerMobileFootsteps.PlaySound(this);
+			}
+            
 			return true;
 		}
 		// this is the 'skill reset' method that is called when a player enters a region and absolutely nukes their stats if they played with the skill settings.
@@ -2419,31 +2424,17 @@ namespace Server.Mobiles
 						if ( c.LootType != LootType.Blessed )
 						{
 							if (
-									c.Catalog == Catalogs.Jewelry || 
 									c.Catalog == Catalogs.Reagent || 
 									c.Catalog == Catalogs.Potion || 
 									c.Catalog == Catalogs.Body || 
 									c.Stackable || 
-									c is BaseTool || 
-									c is BaseHarvestTool || 
-									c is MagicalWand || 
-									c is BaseBeverage || 
+									c is MagicalWand ||
 									c is ManyArrows100 || 
 									c is ManyBolts100 || 
 									c is ManyArrows1000 || 
-									c is ManyBolts1000 || 
-									c is Bedroll || 
-									c is SmallTent || 
-									c is CampersTent || 
+									c is ManyBolts1000 ||
 									c is SkeletonsKey || 
-									c is MasterSkeletonsKey || 
-									c is Scissors || 
-									c is PolishBoneBrush || 
-									c is Torch || 
-									c is Candle || 
-									c is Lantern || 
-									c is DyeTub || 
-									c is Dyes 
+									c is MasterSkeletonsKey
 							)
 							{
 								c.Delete();

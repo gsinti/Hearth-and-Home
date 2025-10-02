@@ -1728,6 +1728,7 @@ namespace Server.Engines.Help
 				+ "[private - Turns on/off detailed messages of your journey for the town crier and local citizen chatter.<br><br>"
 				+ "[quests - Opens a scroll to show certain quest events.<br><br>"
 				+ "[quickbar - Opens a small, vertical bar with common game functions for easier use.<br><br>"
+				+ "[checksecure - Checks player house for unsecured/unlocked items on the ground to prevent loss of items. The unsecure items will be marked with red color and a sound will be played by client if found any.<br><br>"
 				+ "[sad - Opens the weapon's special abilities.<br><br>"
 				+ "[set1 - Sets your weapon's first ability to active.<br>"
 				+ "[set2 - Sets your weapon's second ability to active.<br>"
@@ -1740,6 +1741,7 @@ namespace Server.Engines.Help
 				+ "[spellhue ## - This command, following by a color reference hue number, will change all of your magery spell effects to that color. A value of '1' will normally render as '0' so avoid that setting as it will not produce the result you may want.<br><br>"
 				+ "[statistics - Shows you some statistics of the server.<br><br>"
 				+ "[wealth - Opens a small, horizontal bar showing your gold value for the various forms of currency and gold in your bank and backpack. Currency are items you would have a banker convert to gold for you (silver, copper, xormite, jewels, and crystals). If you put these items in your bank, you can update the values on the wealth bar by right clicking on it.<br><br>"
+				+ "[ShowSkillGainChance - toggles the skill gain chance display in your journal. <br><br>"
 				+ "[VetSupplies - automatically finds and uses veterinarian supplies from the character's inventory if they are there.<br><br>"
 				+ "<br><br>"
 

@@ -987,8 +987,7 @@ namespace Server.Mobiles
 			{
 				Effects.SendLocationEffect( blast1, target.Map, 0x10D3, 30, 10, 0, 0 );
 				target.PlaySound( 0x62D );
-				double webbed = ((double)(this.Fame/200)) > MySettings.S_paralyzeDuration ? MySettings.S_paralyzeDuration : ((double)(this.Fame/200));
-				target.Paralyze( TimeSpan.FromSeconds( webbed ) );
+				target.Paralyze( TimeSpan.FromSeconds( GetParalyzeDuration(target,(double)(this.Fame)) ) );
 			}
 			else if ( form == 7 ) // GIANT STONES AND LOGS ------------------------------------------------------------------------------------------
 			{
@@ -1271,17 +1270,14 @@ namespace Server.Mobiles
 				Effects.SendLocationEffect( blast5, target.Map, 0x3400, 60, 0xB97, 0 );
 				Effects.PlaySound( target.Location, target.Map, 0x64F );
 				BreathDistance = 3;
-				double weed = ((double)(this.Fame/200)) > MySettings.S_paralyzeDuration ? MySettings.S_paralyzeDuration : ((double)(this.Fame/200));
-				target.Paralyze( TimeSpan.FromSeconds( weed ) );
+				target.Paralyze( TimeSpan.FromSeconds( GetParalyzeDuration(target,(double)(this.Fame)) ) );
 			}
 			else if ( form == 35 ) // SMALL WEED BREATH ---------------------------------------------------------------------------------------------
 			{
 				Effects.SendLocationEffect( blast1, target.Map, 0x3400, 60, 0xB97, 0 );
 				Effects.PlaySound( target.Location, target.Map, 0x64F );
 				BreathDistance = 2;
-
-				double weed = ((double)(this.Fame/200)) > MySettings.S_paralyzeDuration ? MySettings.S_paralyzeDuration: ((double)(this.Fame/200));
-				target.Paralyze( TimeSpan.FromSeconds( weed ) );
+				target.Paralyze( TimeSpan.FromSeconds( GetParalyzeDuration(target,(double)(this.Fame)) ) );
 			}
 			else if ( form == 36 ) // ACID SPLASH ---------------------------------------------------------------------------------------------------
 			{
@@ -1298,8 +1294,7 @@ namespace Server.Mobiles
 				Point3D wrapped = new Point3D( ( target.X ), ( target.Y ), (target.Z+2) );
 				Effects.SendLocationEffect( wrapped, target.Map, 0x23AF, 30, 10, 0, 0 );
 				target.PlaySound( 0x5D2 );
-				double wrap = ((double)(this.Fame/200)) > MySettings.S_paralyzeDuration ? MySettings.S_paralyzeDuration: ((double)(this.Fame/200));
-				target.Paralyze( TimeSpan.FromSeconds( wrap ) );
+				target.Paralyze( TimeSpan.FromSeconds( GetParalyzeDuration(target,(double)(this.Fame)) ) );
 			}
 			else if ( form == 38 ) // SMALL STEAM BREATH --------------------------------------------------------------------------------------------
 			{
@@ -1575,6 +1570,17 @@ namespace Server.Mobiles
 				}
 			}
 		}
+		// mummies, spiders, plants and some breath weapons have normalized paralyze duration based on a players Magic Resistance or their fame, capped at 8 seconds.
+		private double GetParalyzeDuration(Mobile target, double fame)
+		{
+			int resist = (int)(target.Skills.MagicResist.Value);
+			// 2s at 125, 8s at 0 magic resist
+			double resistCappedDuration = 8.0 - (resist * (6.0 / 125.0));
+			double fameDuration = fame / 200.0;
+			// Return the smaller of the two
+			return fameDuration > resistCappedDuration ? resistCappedDuration : fameDuration;
+		}
+
 
 		public virtual int BreathComputeDamage()
 		{
@@ -1796,6 +1802,7 @@ namespace Server.Mobiles
 		public static bool AlwaysInvulnerable( Mobile m )
 		{
 			if ( m is PackBear ){ return true; }
+			else if ( m is PackLobster ){ return true; }
 			else if ( m is PackMule ){ return true; }
 			else if ( m is PackStegosaurus ){ return true; }
 			else if ( m is PackTurtle ){ return true; }
@@ -3991,6 +3998,13 @@ namespace Server.Mobiles
 
 			if ( willKill && from is PlayerMobile )
 				Timer.DelayCall( TimeSpan.FromSeconds( 10 ), new TimerCallback( ((PlayerMobile) from).RecoverAmmo ) );
+
+			if (from != null)
+			{
+				double bonus = HunterMarkSystem.GetDamageBonus(from, this);
+				amount = (int)(amount * bonus);
+			}
+
 
 			base.OnDamage( amount, from, willKill );
 			
@@ -8399,7 +8413,10 @@ namespace Server.Mobiles
 			}
 
 			Server.Misc.DropRelic.DropSpecialItem( this, killer, c ); // SOME DROP RARE ITEMS
-
+			//powerful creatures can drop marks of the scourge / honor
+			if (killer != null)
+        		Server.Custom.DefenderOfTheRealm.MarkLootHelper.CheckForMarks(this, c, killer);
+			
 			if ( IsBonded )
 			{
 				int sound = this.GetDeathSound();
@@ -9587,6 +9604,8 @@ namespace Server.Mobiles
 				if ( m is BaseCreature )
 				{
 					BaseCreature c = (BaseCreature)m;
+					Mobile master = c.ControlMaster;
+					if ( master != null && master.Map == Map.Internal ) continue;
 
 					if ( c.IsDeadPet )
 					{
